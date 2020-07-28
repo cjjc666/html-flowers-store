@@ -1,0 +1,173 @@
+<html lang="en">
+
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            background-image: url("dl.jpg");
+            background-attachment: fixed;
+           
+            background-size: cover;
+        }
+
+        #username
+        {
+            
+        margin-top: 280px;
+        height: 28px;
+        outline: none;
+        width: 200px;
+        background-color:pink;
+        border: none;
+    
+        }
+        
+        #password {
+            margin-top: 20px;
+            height: 28px;
+            outline: none;
+            width: 200px;
+            background-color:pink;
+            border: none;
+        }
+       h1
+       {
+           color:red;
+           font-family: 'Californian FB';
+           font-size: 90px;
+            position: absolute;
+            margin-top: 100px;
+            margin-left: 120px;
+
+       }
+        
+
+        #main {
+            
+            text-align: center;
+            height: 400px;
+            width: 370px;
+            margin: auto;
+            display: block;
+            font-family: 'Californian FB';
+            font-size: 20px;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+
+        #button1,
+        #button2,
+        #button3 {            
+            background-color:blueviolet;
+            width: 100px;
+            border: none;
+            font-family: 'Californian FB';
+            font-size: 17px;
+            margin-top: 8px;
+            color: white;
+            position: relative;
+            left: 75px;
+            ;
+
+        }
+
+        #button2 a {
+            font-family: 'Californian FB';
+            font-size: 17px;
+            color: white;
+            font-weight: 400;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #Forgot_password {
+            position: relative;
+            left: 80px;
+            color:blue;
+        }
+    </style>
+
+    <script src="js/jquery-3.4.0.min.js">
+    </script>
+
+    <script>
+
+        $(document).ready(function () {
+            $("#username").focus(function () {
+                $("#username").css("background-color", "red");
+            });
+
+            $("#username").blur(function () {
+                $("#username").css("background-color", "aqua");
+            });
+
+
+        }
+        );
+
+
+    </script>
+</head>
+
+<body>
+
+    <script>
+        var uname;
+        var upass;
+
+        function Login() {
+
+            var userid = document.getElementById("username");
+            var userpass3 = document.getElementById("password");
+            var userDetails = JSON.parse(localStorage.getItem("userDetails"));
+            if (userDetails != null) {
+                for (i = 0; i < userDetails.length; i++) {
+                    if (userDetails[i].userid == userid.value && userDetails[i].password == userpass3.value) {
+                        alert("Login Success !!");
+                        localStorage.Name = userid.value;
+                        localStorage.Password = userpass3.value;
+                        /* */
+                        return true;
+                    }
+                }
+            }
+            alert("Login failed");
+
+            return false;
+
+
+
+
+
+
+        }
+
+        function Logout() {
+            alert("First Login");
+
+            return false;
+        }
+
+
+    </script>
+    <div id="main">
+        <form action="home.html" target="mainframe">
+            <h1>Login</h1>
+            Username:
+            <input type="text" id="username">
+            <br> Password:
+            <input type="passowrd" id="password">
+            <br><br>
+            <input type="submit" value="Login" onclick="return Login()" id="button1">
+            <button id="button2">
+                <a href="zhuce.html">New user</a>
+            </button>
+            <a href="#" id="Forgot_password">Forgot Password</a>
+
+        </form>
+    </div>
+
+</body>
+
+</html>

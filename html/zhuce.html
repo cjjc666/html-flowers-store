@@ -1,0 +1,301 @@
+<html>
+
+<head>
+    <title>Register</title>
+    <style>
+        body{
+            background-image: url('dl.jpg');
+            background-size: cover;
+        }
+        a {
+            text-decoration: none;
+        }
+        table {
+            font-weight: bolder;
+            
+        }
+        button {
+            background-color: blue;
+            width: 99px;
+            height: 48px;
+            color: white;
+            margin-bottom: 19px;
+            border: none;
+            border-radius: 7px;
+        }
+        #register {
+            padding: 0;
+            width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+          
+        }
+        table {
+            margin-left: auto;
+            margin-right: auto;
+            font-family: 'Californian FB';
+            font-size: 30px;
+            color:black;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            font-family:STXingkai;
+            font-size: 100px;
+            color:orange;
+            
+            
+        }
+        td {
+            padding-top: 7px;
+        }
+        #button {
+            border: none;
+            background-color:blueviolet;
+            color: white;
+            font-family: 'Californian FB';
+            font-size: 20px;
+            height: 35px;
+            width: 115px;
+            text-align: center;
+            display: block;              
+            left: 60%;
+            border: none;
+        }
+        #Name,
+        #Contact,
+        #Age,
+        #Password,
+        #CPassword {
+            height: 25px;
+            outline: none;
+            background-color:pink;
+            border: none;
+        }
+    </style>
+</head>
+
+<script src="js/jquery-3.4.0.min.js"></script>
+
+<script>
+    
+        $(document).ready(function ()
+            {
+               
+               $("#button").mouseup(function ()
+               {
+                   $("#button").css("background-color","aqua");
+               });
+    
+                 $("#button").mousedown(function ()
+               {
+                   $("#button").css("background-color","burlywood");
+               });
+            }
+        );
+        </script>
+<script>
+        // var Name=document.getElementById("Name");
+        // var Contact=document.getElementById("Contact");
+        // var DOB=document.getElementById("Age");
+        // var Password=document.getElementById("Password");
+        // var Confirm_Password=document.getElementById("CPassword");
+        
+       
+        // Name=document.getElementById("Name");
+        // Password=document.getElementById("username").value;
+        // Confirm_Password=document.getElementById("password").value;
+       
+        function checkName(){
+            if(document.getElementById("Name").value=="")
+                {
+                    document.getElementById("Name").style.backgroundColor="lightpink";
+                    return false;
+                }
+                else
+                {
+                    document.getElementById("Name").style.backgroundColor="rgb(174, 226, 226)";
+                    return true;
+                }
+            }
+        function checkContact(){
+                    var number = /^\d{11}$/;
+                    if(document.getElementById("Contact").value=="")
+                    {
+                        document.getElementById("Contact").style.backgroundColor="lightpink";
+                        return false;
+                    }
+                    else if(!document.getElementById("Contact").value.match(number))
+                    {
+                        document.getElementById("Contact").style.backgroundColor="lightpink";
+                        return false;
+                    }
+                    else
+                    {
+                        document.getElementById("Contact").style.backgroundColor="rgb(174, 226, 226)";
+                        return true;
+                    }
+            }
+        function checkDOB(){
+            if(document.getElementById("Age").value=="")
+            {
+                document.getElementById("Age").style.backgroundColor="lightpink";
+                return false;
+            }
+            else
+            {
+                document.getElementById("Age").style.backgroundColor="rgb(174, 226, 226)";
+                return true;
+            }
+            }
+       
+
+       function checkPassword(){
+            if(document.getElementById("Password").value=='')
+            {
+                document.getElementById("Password").style.backgroundColor="lightpink";
+                return false;
+            }
+            else
+            {
+                document.getElementById("Password").style.backgroundColor="rgb(174, 226, 226)";
+                return true;
+            }
+            }
+
+             function check_C_Password(){
+            if(document.getElementById("CPassword").value=='')
+            {
+                document.getElementById("CPassword").style.backgroundColor="lightpink";
+                return false;
+            }
+            else
+            {
+                document.getElementById("CPassword").style.backgroundColor="rgb(174, 226, 226)";
+                return true;
+            }
+            }
+            function ConfirmthePassword(){
+            if(document.getElementById("Password").value!=document.getElementById("CPassword").value)
+            {
+                document.getElementById("CPassword").style.backgroundColor="lightpink";
+                return false;
+            }
+            else
+            {
+                document.getElementById("CPassword").style.backgroundColor="rgb(174, 226, 226)";
+                return true;
+            }
+            }
+        function register()
+        {
+            /*if(checkName()&&checkContact()&&checkDOB()&&checkPassword()&&check_C_Password()&&ConfirmthePassword()&&AddName())
+            {
+                alert("Successfully Registred....!");
+                return true;
+            }
+            else
+            {
+                alert("Check The Errors..!");
+                return false;
+            }*/
+
+            var userid=document.getElementById("Name");
+            var dob=document.getElementById("Contact");
+            var age=document.getElementById("age");
+            var userpass1=document.getElementById("Password");
+            var userpass2=document.getElementById("CPassword");
+                var userDetails = JSON.parse(localStorage.getItem("userDetails"));
+                if(userpass1.value != userpass2.value){
+                    alert("password not matching");
+                    return false;
+                }
+                else{
+
+                      alert("Create");
+                    if(userDetails==null)
+                        userDetails = [];
+                    else{
+                        for (i = 0; i < userDetails.length; i++) {
+                            if (userDetails[i].userid == userid.value) {
+                                alert("User is already registered !!");
+                                return false;
+                            }
+                        }
+                    }
+                    userDetails.push({"userid":userid.value, "password":userpass1.value});
+                    localStorage.setItem("userDetails", JSON.stringify(userDetails));
+                    alert("Registration successful");
+                    return true;
+                }
+        }
+       
+        /* Adding Names into Session Storage-----*/
+        function AddName()
+            {
+               alert("Login...");
+                var Name=document.getElementById("Name");
+                var Password=document.getElementById("Password");
+                localStorage.Name=Name.value;
+                localStorage.Password=Password.value;
+                return true;
+               
+            }
+            </script>
+
+<body>
+      
+    <div id="register">
+    <h1>Register Here</h1>
+        <form action="Login.html" method="get">
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td>
+                        <input type="text" id="Name">
+                        <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Contact number:</td>
+                    <td>
+                        <input type="text" id="Contact">
+                    </td>
+                    <br>
+                </tr>
+                <tr>
+                    <td>Age: </td>
+                    <td>
+                        <input type="text" id="Age">
+                    </td>
+                    <br>
+                </tr>
+                <tr>
+                    <td>Password:</td>
+                    <td>
+                        <input type="password" id="Password">
+                    </td>
+                    <br>
+                </tr>
+                <tr>
+                    <td> Confirm Password:</td>
+                    <td>
+                        <input type="password" id="CPassword">
+                    </td>
+                    <br>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Submit" id="button" onclick="return register()">
+                    </td>                            
+                    <td>
+                        <input type="reset" value="reset" id="button">
+                    </td>
+                </tr>
+            </table>
+
+        </form>
+    </div>
+ </body>
+
+</html>

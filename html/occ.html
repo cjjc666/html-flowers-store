@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Occassions</title>
+
+
+    <style>
+        #img1 {
+            margin: 5px;
+        }
+
+        #sp1 {
+            float: right;
+            font-family: 'Californian FB';
+            font-size: 20px;
+        }
+
+        span {
+            display: inline-block;
+        }
+        .menu_list {
+width: 268px;
+margin: 0;
+}
+ 
+.menu_head {
+height: 47px;
+line-height: 47px;
+padding-left: 38px;
+font-size: 14px;
+color: #525252;
+cursor: pointer;
+border: 1px solid #f1f1f1;
+position: relative;
+margin: 0px;
+font-family: 'Californian FB';
+font-family:25px;
+font-weight: bold;
+background: #51a9f18c;
+
+}
+ 
+.menu_list .current {
+background: #51a9f18c;
+}
+ 
+.menu_nva {
+line-height: 38px;
+border-left: 1px solid #51a9f18c;
+backguound: #fff;
+border-right: 1px solid #51a9f18c;
+font-family: 'Californian FB';
+font-size:20px;
+}
+ 
+.menu_nva a {
+display: block;
+height: 38px;
+line-height: 38px;
+padding-left: 38px;
+color: #777777;
+background: #fff;
+text-decoration: none;
+border-bottom: 1px solid #51a9f18c;
+}
+ 
+.menu_nva a:hover {
+text-decoration: none;
+}
+     #left{float:left;width:18%; height:1080px;background-color:white;} 
+      #right{
+          float:left;
+          width:82% ;
+          height:1080px;
+          background-color:white;
+          
+          background-image:url("more.jpg");
+          background-size:cover;
+          text-align:center;                   
+      } 
+      h1{margin-top:300px}
+      body{ margin:0; height:1080px;
+            font-family: 'Californian FB';
+          font-size:20px;
+      } 
+
+   </style>
+    
+
+
+
+
+
+</head>
+<body>
+    <header>
+        <span>
+            <a href="home.html">
+                <img id="img1" src="fanhui.jpg" width="48" height="48" />
+            </a>
+        </span>
+        <span id="sp1">
+            Customer Service:400-520-1314
+        </span>
+    </header>
+    <div id="main" style="width:100%">
+        <div id="left">
+            <div id="firstpaneDiv" class="menu_list">
+                <h3 class="menu_head">Featured Occasions</h3>
+                <div style="display:block" class="menu_nva">                  
+                    <a href="#">Father's Day</a>
+                    <a href="g.html">Graduation</a>
+                    <a href="#">Anniverssary</a>
+                    <a href="#">Just Because</a>
+                    <a href="#">Get Well Soon</a>
+                </div>
+                <h3 class="menu_head">ALL Occasions</h3>
+                <div style="display:none" class="menu_nva">
+                    <a href="#">Congratulations</a>
+                    <a href="#">New Baby</a>
+                    <a href="#">Thank You</a>
+                    <a href="#">Love & Romance</a>
+                    <a href="is.html">I'm Sorry</a>
+                </div>
+            </div>
+            </div>
+        <div id="right">
+            <h1> In the process of development, please look forward to it!</h1>
+        </div>
+        </div>
+
+            <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+            <script>
+                $(document).ready(function(){
+                $("#firstpaneDiv .menu_nva:eq(0)").show();
+                $("#firstpaneDiv h3.menu_head").click(function(){
+                $(this).addClass("current").next("div.menu_nva").slideToggle(200).siblings("div.menu_nva").slideUp("slow");
+                $(this).siblings().removeClass("current");
+                });
+                $("#secondpane .menu_nva:eq(0)").show();
+                $("#secondpane h3.menu_head").mouseover(function(){
+                $(this).addClass("current").next("div.menu_nva").slideDown(400).siblings("div.menu_nva").slideUp("slow");
+                $(this).siblings().removeClass("current");
+                });
+                });
+            </script>
+</body>
+</html>

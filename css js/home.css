@@ -1,0 +1,77 @@
+﻿
+#img2
+{
+ display:block;   
+}
+
+header {
+    background-color: black;
+    width: 100%;
+    height: 50px;
+}
+span {
+    color: white;
+    display: block;
+    float: left;
+    margin: 0px 250px 25px 16px;
+}
+table {
+    border-collapse: collapse;
+    margin-top: 0px;
+    font-family: 'Californian FB';
+    font-size: 20px;
+    background-color:lightskyblue;
+}
+    table td 
+    {
+      padding:0px 100px 5px 5px ;
+      
+    }
+#t1 
+{
+    font-size: 40px;
+    font-family: 'Bradley Hand ITC';
+    color:orangered;
+    }
+a {
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 25px;
+    color:white;
+    
+
+}
+    a:hover 
+    {
+        color:red;
+        text-decoration: none;
+    }
+   #img1
+   {
+       width:100%;
+       height:800px;
+   }
+h1 {
+    text-align: center;
+    color:brown;
+    font-family: 'Californian FB';
+}
+ul {
+    display: inline-block;
+    color: white;
+    font-family: 'Californian FB';
+    font-size: 20px;
+    padding: 80px 200px;
+}
+footer {
+    
+    display:inline-block;
+    margin-left:330px;
+    font-family: 'Californian FB';
+    font-size: 23px;
+    
+}#sp1
+ {
+     color:black;
+ }
+

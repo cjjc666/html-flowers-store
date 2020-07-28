@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Sign Up</title>
+    <script>
+        function v1()
+        {
+            if ((document.f1.tb1.checked == false) && (document.f1.db1.checked == false)) {
+                alert("Input error!");
+                return false
+            }
+            else {
+                return true
+            }
+            if ((document.f1.g1.checked == false) && (document.email.checked == false)) {
+                alert("Input error!");
+                return false
+            }
+            else {
+                return true
+            }
+            if ((document.f1.pw1.checked == false) {
+                alert("Input error!");
+                return false
+            }
+            else {
+                return true
+            }
+            if (document.f1.cn1.checked == false) {
+                alert("Input error!");
+                return false
+            }
+            else {
+                return true
+            }
+        }
+
+       
+   
+
+        function changecolor(val)
+        {
+            var Username = document.getElementById("tb1").value;
+            var password = document.getElementById("pw1").value;
+            var Birth = document.getElementById("db1").value;
+            var gender = document.getElementById("g1").value;
+            var email = document.getElementById("email").value;           
+            var cnum = document.getElementById("cn1").value;
+
+            if ((val.value == "") || (val.value == null))
+            {
+                val.style.background = "pink";
+            }
+        }
+
+    </script>
+    <style>
+        body
+        {
+           background-image:url("dl.jpg");
+           background-size:cover;
+        }
+        h1
+        {
+            color:red;
+            text-align:center;
+            font-family:STXingkai;
+            font-size:90pt;
+        }
+        table
+        {
+            margin-left:600px;
+            font-family: 'Californian FB';
+            font-size: 20px;
+            background-color:white;
+            
+            
+
+                      
+        }
+        td
+        {
+            padding:10px;
+            
+
+        }
+         #button {
+            background-color:pink;
+            font-size: 20px;
+            margin-left: 700px;
+            margin-top:40px;
+        }
+        button 
+        {
+            background-color:pink;
+            font-size: 20px;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>Register Online</h1>
+    <form name="f1" method="get" action="t1.html" onsubmit="return v1()">
+        <table>
+            <tr>
+                <td>Username</td>
+                <td><input type="text" id="tb1" placeholder="Enter your username" onclick="changecolor(this)"  required="required"  /></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" id="pw1" placeholder="Enter your password" onclick="changecolor(this)" required="required" /></td>
+            </tr>
+            <tr>
+                <td>Date of Birth</td>
+                <td><input type="date" id="db1" onclick="changecolor(this)" /></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>
+                    Male<input type="radio" id="g1" onclick="changecolor(this)"/>
+                    Fmale<input type="radio"  id="g1" onclick="changecolor(this)"/>
+                </td>
+            </tr>
+            <tr>
+                <td>E-mail ID</td>
+                <td><input type="email" id="email" placeholder="Your email(must have @)" onclick="changecolor(this)"  required="required"  /></td>
+            </tr>
+            
+            <tr>
+                <td>Contact nunmber</td>
+                <td><input type="tel"  id="cn1" placeholder="Contact number (11 digits)" onclick="changecolor(this)"  required="required"  /></td>
+            </tr>
+        </table>
+        <input type="submit" id="button" value="submit" />
+        <button type="reset" value="reset">reset</button>
+        </form>
+</body>
+</html>

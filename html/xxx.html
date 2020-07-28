@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            background-image: url("dl.jpg");
+            background-size: cover;
+            
+        }
+
+        table {
+            margin-left: 500pt;
+            margin-top: 360px;
+            
+            
+        }
+
+        #n {
+            height: 30px;
+            padding-left: 0px;
+            background: url("2.png") no-repeat scroll left center transparent;
+            background-size: contain;
+            width: 200px;
+            background-color: white;
+            border-radius: 5px;
+           
+        }
+
+        #p {
+            height: 30px;
+            padding-left: 0px;
+            background: url("3.png") no-repeat scroll left center transparent;
+            background-size: contain;
+            width: 200px;
+            background-color: white;
+            border-radius: 5px;
+           
+        }
+        #img
+        {
+            position:absolute;
+            left:720px;
+            top:280px;
+           
+            
+        }
+        
+       
+    </style>
+    <script>
+        
+    /*function checkname()
+        { 
+         var text=document.getElementById("n").value;
+         if(text==")
+        {
+         alert("Error,please enter your username!");
+         return false;
+        }
+        return true;
+        }
+     function checkpword()
+        {
+        var text=document.getElementById("p").value;
+         if(password=="")
+        {
+         alert("Error,please enter your password!");
+         return false;
+        }
+        return true;
+        }*/
+        function check()
+    {
+        var flag=true;
+        var usernameValue=document.getElementById("n").value;    //获取输入的用户名
+        var passwordValue=document.getElementById("p").value;  //获取输入的密码 
+        if(usernameValue==null || usernameValue=="")
+        {
+           alert("Error,please enter your username!")
+        }
+        if(passwordValue==null || passwordValue=="")
+        {
+            alert("Error,please enter your password!")
+        }
+    }
+
+
+
+
+    </script>
+</head>
+<body>
+
+    <form action="t.html">
+
+    <table>
+        <tr>
+
+            <td><input type="text" id="n" placeholder="          Your user name" required="required" /></td>
+        </tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+
+
+
+        <tr>
+
+
+            <td><input type="password" id="p" placeholder="          Your password" required="required" /></td>
+           
+
+        </tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr>
+            <td><input type="image" src="4.png" width="180" height="40" alt="submit" onclick="check()"></td>
+        </tr>
+    </table>
+
+
+    <img src="5.png" id="img" width="80" height="70" />
+   
+
+
+
+
+
+
+</form>
+</body>
+
+</html>
